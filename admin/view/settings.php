@@ -9,7 +9,7 @@
     <div class="clear" style="height: 10px;"></div>
 
     <div class="box-">
-        <form action="" class="form label" method="POST">
+        <form action="" method="post" class="form label" >
             <ul>
                 <li>
                     <label>Site Title</label>
@@ -27,6 +27,17 @@
                     <label>Site Keywords</label>
                     <div class="form-content">
                         <input type="text" name="settings[keywords]" value="<?=setting('keywords')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Site Template</label>
+                    <div class="form-content">
+                        <select name="settings[theme]">
+                             <option>Select theme...</option>
+                             <?php foreach ($themes as $theme): ?>
+                                    <option <?= setting('theme') == $theme ? 'selected' :null?> value="<?= $theme ?>"><?= $theme ?></option>
+                             <?php endforeach; ?>
+                        </select>
                     </div>
                 </li>
                 <li class="submit">

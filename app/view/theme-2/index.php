@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="<?=public_url('boo.css')?>">
 </head>
 <body>
-    <h3> İlk Deneme </h3>
-    <?=site_url('admin')?>
+    <h1>Theme #2</h1>
 </body>
 </html>
