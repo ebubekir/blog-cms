@@ -41,6 +41,63 @@
                     </div>
                 </li>
                 </ul>
+                <h1>Theme Settings</h1>
+            <ul>
+                <li>
+                    <label>Logo Title</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[logo-title]" value="<?=setting('logo-title')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Search Input Placeholder</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[search-placeholder]" value="<?=setting('search-placeholder')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Welcome Title</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[welcome-title]" value="<?=setting('welcome-title')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Welcome Text</label>
+                    <div class="form-content">
+                        <textarea name="settings[welcome-text]"  cols="30" rows=5><?=setting('welcome-text')?></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>Footer About Text</label>
+                    <div class="form-content">
+                        <textarea name="settings[footer-about]"  cols="30" rows=5><?=setting('footer-about')?></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>Facebook Username</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[facebook]" value="<?=setting('facebook')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Twitter Username</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[twitter]" value="<?=setting('twitter')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Instagram Username</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[instagram]" value="<?=setting('instagram')?>">
+                    </div>
+                </li>
+                <li>
+                    <label>Linkedin Username</label>
+                    <div class="form-content">
+                        <input type="text" name="settings[linkedin]" value="<?=setting('linkedin')?>">
+                    </div>
+                </li>
+            </ul>
                 <h1>Maintenance Mode Settings</h1>
             <ul>
                 <li>
@@ -65,6 +122,7 @@
                     </div>
                 </li>
             </ul>
+
             <ul>
                 <li class="submit">
                     <input type="hidden" name="submit" value="1">
