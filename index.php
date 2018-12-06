@@ -17,4 +17,9 @@ if( !file_exists ( controller ( route(0) ) ) ) {
     $route[0] = '404';
 }
 
+if(setting('maintenance-mode') == 1 && route(0) != 'admin')
+{
+    $route[0] = 'maintenance-mode';
+}
+
 require controller( route(0) );
