@@ -18,6 +18,11 @@ function setting($name) {
     global $settings;
     return isset($settings[$name]) ? $settings[$name] : false;
 }
+
+function session($name){
+        return isset($_SESSION[$name]) ? $_SESSION[$name] : false;
+}
+
 function permalink($str, $options = array())
 {
     $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
@@ -97,3 +102,4 @@ function permalink($str, $options = array())
     $str = trim($str, $options['delimiter']);
     return $options['lowercase'] ? mb_strtolower($str, 'UTF-8') : $str;
 }
+

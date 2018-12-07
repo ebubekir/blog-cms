@@ -23,26 +23,12 @@ if(post('submit'))
         $error = 'Passwords do not match.';
     } else {
            //User control
-           $query = $db -> prepare(
-               "SELECT * FROM user WHERE user-name = :username || user-email = :email"
-           );
-           $query-> execute([
-            'username' => $username,
-            'email' => $email
-            ]);
-            $row = $query -> fetch(PDO::FETCH_ASSOC);
+            $row = User::userExist($username,$email);
             if($row){
                 $error = 'This username or e-mail already exist.';
             } else {
                 //Add user
-                $query = $db->prepare(
-                    "INSERT INTO users SET 
-                        user_name = :username,
-                        user_url = :userurl,
-                        user_email = :email,
-                        user_password = :password"
-                );
-                $result = $query->execute([
+                $result = User::Register([
                     'username' => $username,
                     'userurl' => permalink($username),
                     'email' => $email,
@@ -50,6 +36,10 @@ if(post('submit'))
                 ]);
                 if($result){
                     $success = 'Registration completed. You redirecting';
+                    User::Login([
+                        'user_id' => $db->lastInsertId(),
+                        'user_name' => $username
+                    ]);
                     header('Refresh:2;url='.site_url());
                 } else {
                     $error = 'A problem occured. Please try again later.';
