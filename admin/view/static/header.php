@@ -106,3 +106,9 @@
 
 <!--content-->
 <div class="content">
+
+<?php if(isset($error)):?>
+    <div class="message error box-">
+        <?=$error?>
+    </div>
+<?php endif;?>

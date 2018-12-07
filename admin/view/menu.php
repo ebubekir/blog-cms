@@ -19,18 +19,22 @@
                 </tr>
             </thead>
             <tbody>
+
+                <?php foreach($rows as $row):?>
                 <tr>
                     <td>
-
+                    <?=$row['menu_title']?>
                     </td>
                     <td>
-                        <span class="date">21 hours ago</span>
+                        <?=$row['menu_date']?>
                     </td>
                     <td>
-                        <a href="#" class="btn">Edit</a>
-                        <a href="#" class="btn">Delete</a>
+                        <a href="<?=admin_url('edit-menu?id=' . $row['menu_id'])?>" class="btn">Edit</a>
+                        <a href="<?=admin_url('delete?table=menu&column=menu_id&id'.$row['menu_id'])?>" class="btn">Delete</a>
                     </td>
                 </tr>
+                <?php endforeach; ?>
+
             </tbody>
         </table>
     </div>
