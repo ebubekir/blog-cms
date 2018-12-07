@@ -22,9 +22,13 @@ $menus = [
             ]
     ],
 
+    'menu' => [
+            'title' => 'Menu Management',
+            'icon' => 'bars'
+    ],
     'settings' => [
-            'title' => 'Settings',
-            'icon' => 'cogs'
+        'title' => 'Settings',
+        'icon' => 'cogs'
     ]
 ];
 
