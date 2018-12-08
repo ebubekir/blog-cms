@@ -12,7 +12,7 @@ function post($name)
         return htmlspecialchars(trim($_POST[$name]));
     }
 }
-function get(){
+function get($name){
     if(isset($_GET[$name]))
     {
         if(is_array($_GET[$name]))

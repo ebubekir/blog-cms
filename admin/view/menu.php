@@ -30,7 +30,7 @@
                     </td>
                     <td>
                         <a href="<?=admin_url('edit-menu?id=' . $row['menu_id'])?>" class="btn">Edit</a>
-                        <a href="<?=admin_url('delete?table=menu&column=menu_id&id'.$row['menu_id'])?>" class="btn">Delete</a>
+                        <a href="<?=admin_url('delete?table=menu&column=menu_id&id='.$row['menu_id'])?>" class="btn">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

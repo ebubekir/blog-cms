@@ -30,38 +30,17 @@
             <div class="col-12 col-md">
                 <h5>Social</h5>
                 <ul class="list-unstyled text-small">
-                    <?php if(setting('facebook')):?>
+
+
+                    <?php foreach(menu(5) as $key => $menu):?>
                     <li>
-                        <a class="text-muted" href="https://facebook.com/<?=setting('facebook')?>">
-                            <i class="fab fa-facebook-square"></i>
-                            <?=setting('facebook')?>
+                        <a class="text-muted" href="<?=$menu['url']?>">
+                                <?=htmlspecialchars_decode($menu['title'])?>
                         </a>
                     </li>
-                    <?php endif;?>
-                    <?php if(setting('twitter')):?>
-                    <li>
-                        <a class="text-muted" href="https://twitter.com/<?=setting('twitter')?>">
-                             <i class="fab fa-twitter-square"></i>
-                             <?=setting('twitter')?>
-                        </a>
-                    </li>
-                    <?php endif;?>
-                    <?php if(setting('instagram')):?>
-                    <li>
-                        <a class="text-muted" href="https://instagram.com/<?=setting('instagram')?>">
-                            <i class="fab fa-instagram"></i>
-                            <?=setting('instagram')?>
-                        </a>
-                    </li>
-                    <?php endif;?>
-                    <?php if(setting('linkedin')):?>
-                    <li>
-                        <a class="text-muted" href="https://linkedin.com/in/<?=setting('linkedin')?>">
-                            <i class="fab fa-linkedin"></i>
-                            <?=setting('linkedin')?>
-                        </a>
-                    </li>
-                    <?php endif;?>
+                    <?php endforeach;?>
+
+                     
                 </ul>
             </div>
         </div>

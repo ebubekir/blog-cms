@@ -1,4 +1,20 @@
 <?php
+$id = get('id');
+if(!$id)
+{
+    header('Location:' . admin_url('menu'));
+    exit;
+}
+
+$query = $db->prepare('SELECT * FROM menu WHERE menu_id= :id');
+$query->execute(['id' => $id]);
+$row = $query->fetch(PDO::FETCH_ASSOC);
+
+if(!$row){
+    header('Location:' . admin_url('menu'));
+    exit;
+}
+
 
 if (post('submit')) {
 
@@ -30,11 +46,12 @@ if (post('submit')) {
             $menu[] = $arr;
         }
 
-        // menüyü veritabanına ekle
-        $query = $db->prepare('INSERT INTO menu SET menu_title = :menu_title, menu_content = :menu_content');
+        // Update data
+        $query = $db->prepare('UPDATE menu SET menu_title = :menu_title, menu_content = :menu_content WHERE menu_id= :id');
         $result = $query->execute([
             'menu_title' => $menu_title,
-            'menu_content' => json_encode($menu)
+            'menu_content' => json_encode($menu),
+            'id' => $id
         ]);
 
         if ($result) {
@@ -46,5 +63,5 @@ if (post('submit')) {
     }
 
 }
-
-require admin_view('add-menu');
+$menuData = json_decode($row['menu_content'], true);
+require admin_view('edit-menu');
