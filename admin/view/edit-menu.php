@@ -5,9 +5,11 @@
         <div style="padding-bottom:10px;max-width:400px;">
             <input type="text" name="menu_title" value="<?=post('menu_title') ? post('menu_title') : $row['menu_title'];?>" placeholder="Menu Title">
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
+            
         <?php foreach ($menuData as $key => $menu):?>
             <li>
+            <div class="handle"></div>
                 <div class="menu-item">
                     <a href="#" class="delete-menu">
                         <i class="fa fa-times"></i>
@@ -16,10 +18,13 @@
                     <input name="url[]" type="text" value="<?=$menu['url']?>" placeholder="Link">
                 </div>
                 <div class="sub-menu">
-                        <ul> 
+                        <ul class="menu"> 
+                            
                             <?php if(isset($menu['submenu'])):?>
                                 <?php foreach($menu['submenu'] as $k => $submenu ):?>
+                                
                                 <li>
+                                <div class="handle"></div>
                                     <div class="menu-item">
                                         <a href="#" class="delete-menu">
                                             <i class="fa fa-times"></i>
@@ -48,7 +53,7 @@
     $(function(){
         $('#add-menu').on('click' , function(e){
             $('#menu').append('<li>\n' +
-            '                    <div class="menu-item">\n' +
+            '                    <div class="handle"></div><div class="menu-item">\n' +
             '                        <a href="#" class="delete-menu">\n' +
             '                            <i class="fa fa-times"></i>\n' +
             '                        </a>\n' +
@@ -67,7 +72,7 @@
         $(document.body).on('click', '.add-submenu', function (e) {
             var index = $(this).closest('li').index();
                 $(this).prev('.sub-menu').find('ul').append('<li>\n' +
-'                                <div class="menu-item">\n' +
+'                                <div class="handle"></div><div class="menu-item">\n' +
 '                                    <a href="#" class="delete-menu">\n' +
 '                                        <i class="fa fa-times"></i>\n' +
 '                                    </a>\n' +

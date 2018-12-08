@@ -83,4 +83,21 @@ $(function () {
         CKEDITOR.replace('editor');
     }
 
+    $('.menu').sortable({
+        handle:'.handle',
+        update: function(event,ui){
+                $('#menu >li').each(function (){
+                    var subMenu = $('li' ,this);
+                    if(subMenu.length){
+                            var index = $(this).index();
+                            subMenu.each(function(){
+                                $('input:eq(0)',this).attr('name','sub_title_'+ index +'[]');
+                                $('input:eq(1)',this).attr('name','sub_url_'+ index +'[]');
+
+                            });
+                    }
+                });
+        }
+    });
+
 });

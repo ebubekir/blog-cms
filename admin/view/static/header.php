@@ -12,9 +12,31 @@
 
     <!--scripts-->
     <script src="<?=admin_public_url('scripts/jquery-1.12.2.min.js')?>"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
    <!--  <script src="https://cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script> -->
     <script src="<?=admin_public_url('scripts/admin.js')?>"></script>
-
+    <style>
+        .menu-container .handle{
+            width:15px;
+            height:15px;
+            background:#ccc;
+            position:absolute;
+            top:15px;
+            right:-15px;
+            cursor:move;
+        }
+        .menu-container form>ul li{
+            background:#f5f5f5;
+            overflow:inherit;
+        }
+        .menu-container form>ul li.ui-sortable-helper{
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+        .ui-sortable-placeholder{
+            background:#f7ffd8 !important;
+            visibility:visible !important;
+        }
+    </style>
 </head>
 <body>
 
