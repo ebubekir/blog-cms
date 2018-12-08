@@ -12,7 +12,8 @@ $config = require __DIR__ . '/config.php';
 
 //Database Connection
 try {
-    $db = new PDO('mysql:host='.$config['db']['host'] . ';dbname=' . $config['db']['name'],$config['db']['user'],$config['db']['pass']);
+    //$db = new PDO('mysql:host='.$config['db']['host'] . ';dbname=' . $config['db']['name'],$config['db']['user'],$config['db']['pass']);
+    $db = new basicdb($config['db']['host'],$config['db']['name'],$config['db']['user'],$config['db']['pass']);
 }   catch (PDOException $e) { 
     die($e->getMessage());
 }

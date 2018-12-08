@@ -9,7 +9,7 @@
             
         <?php foreach ($menuData as $key => $menu):?>
             <li>
-            <div class="handle"></div>
+            <div class="handle"><i class="fa fa-arrows-alt"></i></div>
                 <div class="menu-item">
                     <a href="#" class="delete-menu">
                         <i class="fa fa-times"></i>
@@ -24,7 +24,7 @@
                                 <?php foreach($menu['submenu'] as $k => $submenu ):?>
                                 
                                 <li>
-                                <div class="handle"></div>
+                                <div class="handle"><i class="fa fa-arrows-alt"></i></div>
                                     <div class="menu-item">
                                         <a href="#" class="delete-menu">
                                             <i class="fa fa-times"></i>
@@ -53,7 +53,7 @@
     $(function(){
         $('#add-menu').on('click' , function(e){
             $('#menu').append('<li>\n' +
-            '                    <div class="handle"></div><div class="menu-item">\n' +
+            '                    <div class="handle"><i class="fa fa-arrows-alt"></i></div><div class="menu-item">\n' +
             '                        <a href="#" class="delete-menu">\n' +
             '                            <i class="fa fa-times"></i>\n' +
             '                        </a>\n' +
@@ -72,7 +72,7 @@
         $(document.body).on('click', '.add-submenu', function (e) {
             var index = $(this).closest('li').index();
                 $(this).prev('.sub-menu').find('ul').append('<li>\n' +
-'                                <div class="handle"></div><div class="menu-item">\n' +
+'                                <div class="handle"><i class="fa fa-arrows-alt"></i></div><div class="menu-item">\n' +
 '                                    <a href="#" class="delete-menu">\n' +
 '                                        <i class="fa fa-times"></i>\n' +
 '                                    </a>\n' +

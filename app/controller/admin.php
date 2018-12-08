@@ -15,11 +15,7 @@ $menus = [
     ],
     'users' => [
             'title' => 'Users',
-            'icon' => 'user',
-            'submenu' => [
-                    'add-user' => 'Add User',
-                    'users' =>  'All Users'
-            ]
+            'icon' => 'user'
     ],
 
     'menu' => [
