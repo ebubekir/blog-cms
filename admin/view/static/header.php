@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-
+<?php if(session('user_rank') && session('user_rank') != 3 ):?>
 <!--navbar-->
 <div class="navbar">
     <ul dropdown>
@@ -47,17 +47,18 @@
             <a href="#">
                 <span class="fa fa-home"></span>
                 <span class="title">
-                    BLOG-CMS
+                    <?=setting('title')?>
                 </span>
             </a>
         </li>
         <li>
-            <a href="#">
-                <span class="fa fa-comment"></span>
-                1
+            <a href="<?=admin_url('logout')?>">
+                <span class="fa fa-power-off"></span>
+                Çıkış Yap
             </a>
         </li>
-        <li>
+
+     <!--   <li>
             <a href="#">
                 <span class="fa fa-plus"></span>
                 <span class="title">New</span>
@@ -79,7 +80,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li>-->
     </ul>
 </div>
 <!--sidebar-->
@@ -125,7 +126,7 @@
     </a>
 
 </div>
-
+               
 <!--content-->
 <div class="content">
 
@@ -133,4 +134,4 @@
     <div class="message error box-">
         <?=$error?>
     </div>
-<?php endif;?>
+<?php endif;?> <?php endif;?>

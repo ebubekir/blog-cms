@@ -38,7 +38,8 @@ if(post('submit'))
                     $success = 'Registration completed. You redirecting';
                     User::Login([
                         'user_id' => $db->lastInsertId(),
-                        'user_name' => $username
+                        'user_name' => $username,
+                        'user_rank' => 3
                     ]);
                     header('Refresh:2;url='.site_url());
                 } else {

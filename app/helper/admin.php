@@ -18,3 +18,12 @@ function admin_public_url($url = false) {
 
     return URL . "/admin/public/" . $url;
 }
+
+function user_ranks($rankid = null){
+    $ranks = [
+        1 => 'Admin',
+        2 => 'Editor',
+        3 => 'Member'
+    ];
+    return $rankid ? $ranks[$rankid] : $ranks;
+}

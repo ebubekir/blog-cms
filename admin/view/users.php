@@ -16,6 +16,7 @@
                     <th>Username</th>
                     <th class="hide">E-Mail</th>
                     <th class="hide">Register Date</th>
+                    <th class="hide">Rank</th>
                     <th>Edit / Delete</th>
                 </tr>
             </thead>
@@ -33,6 +34,10 @@
                     <td class="hide">
                         <?=$row['user_date']?>
                     </td>
+                    <td class="hide">
+                        <?=user_ranks($row['user_rank'])?>
+                    </td>
+
                     <td>
                         <a href="<?=admin_url() . 'edit-user?id='.$row['user_id']?>" class="btn">Edit</a>
                         <a onclick="return confirm('Are you sure?')" href="<?=admin_url('delete?table=users&column=user_id&id='.$row['user_id'])?>" class="btn">Delete</a>

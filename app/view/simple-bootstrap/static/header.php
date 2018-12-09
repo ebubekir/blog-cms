@@ -81,11 +81,11 @@
             <?php else: ?>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Giriş Yap
+                    Login
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="<?=site_url('login')?>">Giriş Yap</a>
-                    <a class="dropdown-item" href="<?=site_url('register')?>">Kayıt Ol</a>
+                    <a class="dropdown-item" href="<?=site_url('login')?>">Login</a>
+                    <a class="dropdown-item" href="<?=site_url('register')?>">Register</a>
                 </div>
             </div>
             <?php endif; ?>

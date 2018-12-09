@@ -1,6 +1,6 @@
 <?php
 
-$settings["title"] = "Your Personal Blog";
+$settings["title"] = "Personal Blog";
 $settings["description"] = "Lorem ipsum dolor sit amet.";
 $settings["keywords"] = "ebubekir,karanfil,github,pandaclove";
 $settings["theme"] = "simple-bootstrap";
