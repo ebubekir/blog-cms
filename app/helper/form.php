@@ -24,3 +24,22 @@ function get($name){
         return htmlspecialchars(trim($_GET[$name]));
     }
 }
+
+
+function form_control(...$except_these){
+    unset($_POST['submit']);
+    $data = [];
+    $error = false;
+    foreach ($_POST as $key => $value) {
+        if(!in_array($key,$except_these) && !post($key)){
+            $error = true;
+        } else {
+            $data[$key] = post($key);
+        }
+        
+    }
+    if($error){
+        return false;
+    }
+    return $data;
+}
