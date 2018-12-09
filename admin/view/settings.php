@@ -14,7 +14,7 @@
                 <li>
                     <label>Site Title</label>
                     <div class="form-content">
-                        <input type="text" name="settings[title]" value="<?=setting('title')?>">
+                        <input type="text" name="settings[title]" value="<?=post('settings[title]') ? post('settings[title]') : setting('title') ?>">
                     </div>
                 </li>
                 <li>
