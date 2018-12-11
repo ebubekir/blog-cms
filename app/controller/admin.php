@@ -15,20 +15,38 @@ if(!session('user_rank') || session('user_rank') == 3){
 $menus = [
     'index' => [
             'title' => 'Homepage',
-            'icon' => 'tachometer'
+            'icon' => 'tachometer',
+            'permissions' => [
+                    'show' => 'View',
+
+            ]
     ],
     'users' => [
             'title' => 'Users',
-            'icon' => 'user'
+            'icon' => 'user',
+            'permissions' => [
+                'show' => 'View',
+                'edit' => 'Edit',
+                'delete' => 'Delete'
+            ]
     ],
 
     'menu' => [
             'title' => 'Menu Management',
-            'icon' => 'bars'
+            'icon' => 'bars',
+            'permissions' => [
+                'show' => 'View',
+                'edit' => 'Edit',
+                'delete' => 'Delete'
+            ]
     ],
     'settings' => [
         'title' => 'Settings',
-        'icon' => 'cogs'
+        'icon' => 'cogs',
+        'permissions' => [
+            'show' => 'View',
+            'edit' => 'Edit'
+        ]
     ]
 ];
 
