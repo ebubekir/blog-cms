@@ -44,7 +44,7 @@
                                     <div class="list">
                                         <?php foreach($menu['permissions'] as $key =>$val ):?>
                                             <label>
-                                                <input name="user_permissions[<?=$url?>][<?=$key?>]" value="1" type="checkbox">
+                                                <input <?=isset($permissions[$url][$key]) && isset($permissions[$url][$key]) == 1 ? ' checked':null ?> name="user_permissions[<?=$url?>][<?=$key?>]" value="1" type="checkbox">
                                                 <?=$val?>
                                             </label>
                                         <?php endforeach;?>

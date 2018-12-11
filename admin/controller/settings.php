@@ -1,4 +1,9 @@
 <?php 
+if(!permission('settings','show'))
+{
+    permission_page();
+    exit;
+}
 $themes = [];
 foreach (glob(PATH . '/app/view/*/') as $folder) {
     $folder = explode('/' , rtrim($folder , '/'));
@@ -7,13 +12,17 @@ foreach (glob(PATH . '/app/view/*/') as $folder) {
 
 if(post('submit'))
 {
+    if(!permission('settings','edit'))
+    {
+        $error = 'You have not permission for this action';
+    } else {
     $html = '<?php'.PHP_EOL.PHP_EOL;
     foreach(post('settings') as $key => $val){
         $html .= '$settings["'. $key .'"] = "'. $val .'";'.PHP_EOL;
     }
     file_put_contents(PATH . '/app/settings.php' , $html);
-    sleep(1);
-    header('Refresh:0;url=' . admin_url('settings'));
+    header('Location:' . admin_url('settings'));
+    }
 }
 
 require admin_view('settings');

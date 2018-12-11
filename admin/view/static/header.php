@@ -52,18 +52,19 @@
             </a>
         </li>
         <li>
+            <a href="#">
+                <span class="fa fa-user"></span>
+                <span class="title">Welcome <?=session('user_name')?></span>
+            </a>
+          </li>
+        <li>
             <a href="<?=admin_url('logout')?>">
                 <span class="fa fa-power-off"></span>
                 Çıkış Yap
             </a>
         </li>
 
-     <!--   <li>
-            <a href="#">
-                <span class="fa fa-plus"></span>
-                <span class="title">New</span>
-            </a>
-            <ul>
+        <!--  <ul>
                 <li>
                     <a href="#">
                         New Post
@@ -89,6 +90,7 @@
     <ul>
         <?php 
         foreach($menus as $mainUrl => $menu):
+        if(!permission($mainUrl,'show')) continue;
         ?>
 
         <li class="<?=(route(1) == $mainUrl) || isset($menu['submenu'][route(1)]) ? 'active' : null ?>">

@@ -124,10 +124,12 @@
             </ul>
 
             <ul>
+            <?php if (permission('settings','edit')):?>
                 <li class="submit">
                     <input type="hidden" name="submit" value="1">
                     <button type="submit">Save Changes</button>
                 </li>
+            <?php endif;?>
             </ul>
             </ul>
         </form>

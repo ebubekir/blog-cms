@@ -1,5 +1,9 @@
 <?php
-
+if(!permission('users','edit'))
+{
+    permission_page();
+    exit;
+}
 $id = get('id');
 if(!$id){
     header('Location:' . admin_url('users'));
@@ -35,5 +39,4 @@ if(post('submit'))
 }
 
 $permissions = json_decode($row['user_permissions'],true);
-print_r($permissions);
 require admin_view('edit-user');

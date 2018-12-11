@@ -36,6 +36,7 @@ $menus = [
             'icon' => 'bars',
             'permissions' => [
                 'show' => 'View',
+                'add' => 'Add',
                 'edit' => 'Edit',
                 'delete' => 'Delete'
             ]

@@ -1,4 +1,10 @@
 <?php
+if(!permission('menu','edit'))
+{
+    permission_page();
+    exit;
+}
+
 $id = get('id');
 if(!$id)
 {

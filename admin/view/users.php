@@ -39,8 +39,11 @@
                     </td>
 
                     <td>
+                        <?php if (permission('users','edit')):?>
                         <a href="<?=admin_url() . 'edit-user?id='.$row['user_id']?>" class="btn">Edit</a>
+                        <?php endif;?><?php if (permission('users','delete')):?>
                         <a onclick="return confirm('Are you sure?')" href="<?=admin_url('delete?table=users&column=user_id&id='.$row['user_id'])?>" class="btn">Delete</a>
+                        <?php endif;?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

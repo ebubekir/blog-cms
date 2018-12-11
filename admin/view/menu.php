@@ -3,7 +3,9 @@
     <div class="box-">
         <h1>
             Menu Management 
+            <?php if (permission('menu','add')):?>
             <a href="<?=admin_url('add-menu')?>">Add New</a>
+            <?php endif;?>
         </h1>
     </div>
 
@@ -29,8 +31,11 @@
                         <?=$row['menu_date']?>
                     </td>
                     <td>
+                    <?php if (permission('menu','edit')):?>
                         <a href="<?=admin_url('edit-menu?id=' . $row['menu_id'])?>" class="btn">Edit</a>
-                        <a href="<?=admin_url('delete?table=menu&column=menu_id&id='.$row['menu_id'])?>" class="btn">Delete</a>
+                        <?php endif;?><?php if (permission('menu','delete')):?>
+                        <a onclick="return confirm('Are you sure?')" href="<?=admin_url('delete?table=menu&column=menu_id&id='.$row['menu_id'])?>" class="btn">Delete</a>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

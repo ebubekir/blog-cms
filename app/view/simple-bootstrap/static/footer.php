@@ -32,7 +32,7 @@
                 <ul class="list-unstyled text-small">
 
 
-                    <?php foreach(menu(5) as $key => $menu):?>
+                    <?php foreach(menu(6) as $key => $menu):?>
                     <li>
                         <a class="text-muted" href="<?=$menu['url']?>">
                                 <?=htmlspecialchars_decode($menu['title'])?>

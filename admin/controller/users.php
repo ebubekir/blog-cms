@@ -1,5 +1,9 @@
 <?php 
-
+if(!permission('users','show'))
+{
+    permission_page();
+    exit;
+}
 $totalRecord = $db->from('users')
                   ->select('count(user_id) as total')
                   ->total();
