@@ -41,6 +41,16 @@ $menus = [
                 'delete' => 'Delete'
             ]
     ],
+    'contact' => [
+            'title' => 'Inbox',
+            'icon' => 'envelope',
+            'permissions' => [
+                'show' => 'View',
+                'send' => 'Send',
+                'edit' => 'Edit',
+                'delete' => 'Delete'
+            ]
+    ],
     'settings' => [
         'title' => 'Settings',
         'icon' => 'cogs',
