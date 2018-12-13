@@ -41,6 +41,56 @@
                     </div>
                 </li>
                 </ul>
+                <ul>
+                    <h1>SMTP Mail Settings</h1>
+                      <li>
+                          <label>SMTP Host</label>
+                          <div class="form-content">
+                              <input type="text" name="settings[smtp_host]" value="<?=setting('smtp_host')?>">
+                          </div>
+                      </li>
+                      <li>
+                          <label>SMTP E-Mail</label>
+                          <div class="form-content">
+                              <input type="text" name="settings[smtp_email]" value="<?=setting('smtp_email')?>">
+                          </div>
+                      </li>
+                      <li>
+                          <label>Sender E-Mail</label>
+                          <div class="form-content">
+                              <input type="text" name="settings[smtp_send_email]" value="<?=setting('smtp_send_email')?>">
+                          </div>
+                      </li>
+                      <li>
+                          <label>Sender Name</label>
+                          <div class="form-content">
+                              <input type="text" name="settings[smtp_send_name]" value="<?=setting('smtp_send_name')?>">
+                          </div>
+                      </li>
+                      <li>
+                          <label>SMTP Password</label>
+                          <div class="form-content">
+                              <input type="password" name="settings[smtp_password]" value="<?=setting('smtp_password')?>">
+                          </div>
+                      </li>
+                      <li>
+                          <label>SMTP Port</label>
+                          <div class="form-content">
+                              <input type="text" name="settings[smtp_port]" value="<?=setting('smtp_port')?>">
+                          </div>
+                      </li>
+                      <li>
+                          <label>SMTP Secure</label>
+                          <div class="form-content">
+
+                            <select class="" name="settings[smtp_secure]">
+                                <option>-Secure Type-</option>
+                                <option  <?=setting('smtp_secure') == 'ssl' ? 'selected' : null?>  value="ssl">SSL</option>
+                                <option  <?=setting('smtp_secure') == 'tls' ? 'selected' : null?> value="tls">TLS</option>
+                            </select>
+                          </div>
+                      </li>
+                </ul>
                 <h1>Theme Settings</h1>
             <ul>
                 <li>
