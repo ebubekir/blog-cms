@@ -11,21 +11,21 @@ function timeConvert ( $zaman ){
 	$yil = round($zaman_farki/29030400);
 	if( $saniye < 60 ){
 		if ($saniye == 0){
-			return "az önce";
+			return "shortly before";
 		} else {
-			return $saniye .' saniye önce';
+			return $saniye .'  second ago';
 		}
 	} else if ( $dakika < 60 ){
-		return $dakika .' dakika önce';
+		return $dakika .' minutes ago';
 	} else if ( $saat < 24 ){
-		return $saat.' saat önce';
+		return $saat.' hours ago';
 	} else if ( $gun < 7 ){
-		return $gun .' gün önce';
+		return $gun .' days ago';
 	} else if ( $hafta < 4 ){
-		return $hafta.' hafta önce';
+		return $hafta.' week ago';
 	} else if ( $ay < 12 ){
-		return $ay .' ay önce';
+		return $ay .' month ago';
 	} else {
-		return $yil.' yıl önce';
+		return $yil.' years ago';
 	}
 }
